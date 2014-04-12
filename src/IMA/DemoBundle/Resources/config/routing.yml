@@ -1,0 +1,11 @@
+ima_demo_homepage:
+    pattern:  /
+    defaults: { _controller: IMADemoBundle:Default:index }
+
+ima_example1:
+    pattern : /example1
+    defaults : { _controller: IMADemoBundle:Default:example1 }
+
+ima_webstarter:
+    pattern : /webstarter
+    defaults : { _controller: IMADemoBundle:Default:webstarter }

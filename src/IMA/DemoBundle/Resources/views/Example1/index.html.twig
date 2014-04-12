@@ -1,0 +1,151 @@
+{% extends "IMADemoBundle::base.html.twig" %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+
+        <link href="{{ asset('bundles/imademo/css/IMA-jQuery-slider.css') }}" rel="stylesheet">
+
+        <style type="text/css">
+
+            #sliderContainer {
+                height:400px;
+                width:100%;
+            }
+
+            #IMA-nextControl {
+                background-image:url({{ asset('bundles/imademo/images/rightArrow.png') }});
+                right:0px;
+                top: 175px;
+            }
+
+            #IMA-previousControl {
+                background-image:url({{ asset('bundles/imademo/images/leftArrow.png') }});
+                left:0px;
+                top: 175px;
+
+            }
+
+
+        </style>
+    {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <!-- Static navbar -->
+        <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="./">Default</a></li>
+                    <li><a href="../navbar-static-top/">Static top</a></li>
+                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="IMA-sliderContainer" id="sliderContainer">
+        <ul id="slider1" class="IMA-slider" >
+            <li style="height:100%;width:100%;background-color:red;"></li>
+            <li style="height:100%;width:100%;background-color:blue;"></li>
+            <li style="height:100%;width:100%;background-color:green;"></li>
+        </ul>
+
+        <div class="IMA-sliderControl" id="IMA-nextControl">
+        </div>
+
+        <div class="IMA-sliderControl" id="IMA-previousControl">
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Heading</h2>
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+
+
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; Company 2013</p>
+        </footer>
+
+
+    </div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script src="{{ asset('bundles/imademo/js/IMA-jQuery-slider.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('#slider1').slider(
+                    {
+                        animation : {
+                            type : "carousel", // Can be carousel, fade,
+
+                            //Transitions between slides
+                            transitions :  {
+                                properties : {
+                                    duration: 600, // in milliseconds. if there's more than one, we will choose randomly one duration for each element
+                                    easingType : "none",
+                                    direction : "left"
+                                }
+                            }
+                        }
+                    }
+            );
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+/web/bundles/
+/app/cache/*
+/app/logs/*
+/web/uploads/*
+.idea
+/vendor/
+/drafts/*

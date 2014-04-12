@@ -1,0 +1,21 @@
+Acme\DemoBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: Acme\DemoBundle\Entity\PostRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        title:
+            type: text
+        body:
+            type: text
+
+    manyToOne:
+        author:
+            targetEntity: Application\Sonata\UserBundle\Entity\User
+
+
+    lifecycleCallbacks: {  }
