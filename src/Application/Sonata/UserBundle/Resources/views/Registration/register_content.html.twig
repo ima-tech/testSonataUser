@@ -1,0 +1,134 @@
+{% block fos_user_content %}
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="well">
+                <div class="panel-heading">
+                    <h3>{{ 'title_user_registration'|trans({}, 'SonataUserBundle') }}</h3>
+                </div>
+                <div class="panel-body">
+                    <form ng-app="userRegistrationApp" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register form-horizontal">
+
+                        <h4>{{ 'General'|trans({}, 'SonataUserBundle') }}</h4>
+                        <hr>
+
+
+                        <div class="form-group">
+                            {{ form_label(form.username, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.email, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <br>
+                        <h4>{{ 'form.label_plain_password'|trans({}, 'SonataUserBundle') }}</h4>
+                        <hr>
+
+                        <div class="form-group">
+                            {{ form_label(form.plainPassword.first, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.plainPassword.second, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <br>
+                        <h4>{{ 'Profile'|trans({}, 'SonataUserBundle') }}</h4>
+                        <hr>
+
+                        <div class="form-group">
+                            {{ form_label(form.lastName, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.firstName, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.date_of_birth, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.date_of_birth, {'attr': {'class': '' }}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.gender, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.gender, {'attr': {'class': ''}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.phone, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.phone, {'attr': {'class': 'form-control bfh-phone', 'data-country':'sonata_user_registration_form_country'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.address, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.city, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.country, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.country, {'attr': {'class': 'form-control bfh-countries', ' data-country':'US'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.state, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.state, {'attr': {'class': 'form-control bfh-states', 'data-country':'sonata_user_registration_form_country'}}) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.postalCode, null, {'label_attr': {'class': 'col-xs-4 control-label'}}) }}
+                            <div class="col-xs-8">
+                                {{ form_widget(form.postalCode, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+
+                        {{ form_rest(form) }}
+
+
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success pull-right">{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock fos_user_content %}

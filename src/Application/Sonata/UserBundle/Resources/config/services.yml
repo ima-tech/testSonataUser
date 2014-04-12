@@ -1,0 +1,21 @@
+parameters:
+
+services:
+    sonata.user.registration.form.type:
+        class: Application\Sonata\UserBundle\Form\Type\RegistrationFormType
+        arguments: [ "%fos_user.model.user.class%"]
+        tags:
+            - { name: form.type, alias: sonata_user_registration }
+
+    sonata.child.registration.form.type:
+        class: Application\Sonata\UserBundle\Form\Type\ChildFormType
+        arguments: [ "%fos_user.model.user.class%"]
+        tags:
+            - { name: form.type, alias: sonata_child_registration }
+
+    sonata.user.registration.form.handler.default:
+        class: Application\Sonata\UserBundle\Form\Handler\RegistrationFormHandler
+        scope: request
+        public: false
+        arguments: [@fos_user.registration.form, @request, @fos_user.user_manager, @fos_user.mailer, @fos_user.util.token_generator]
+
