@@ -1,8 +1,7 @@
-Symfony Standard Edition
+Sonata Testing overloading Registration
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
-application that you can use as the skeleton for your new applications.
+This directory is to test and figure out why I can't overwrite sonata registration form to create a user with more fields
 
 
 1) Get the vendors
